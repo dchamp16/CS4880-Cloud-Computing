@@ -1,0 +1,114 @@
+serverless
+    - Serverless computing is a cloud-native development model that allows developers to build and run applications without having to manage servers.
+
+    Essentially, you focus on writing code and business logic, while the cloud provider handles the provisioning, maintenance, and scaling of the server infrastructure. This can be a major advantage, as it can save developers a lot of time and effort.
+
+    Here's a breakdown of the key points about serverless:
+
+        - No server management: You don't have to worry about provisioning, patching, or scaling servers. The cloud provider takes care of all of that for you.
+        - Event-driven: Serverless applications are typically event-driven, which means that they run in response to events, such as a user clicking a button or a file being uploaded. This can make them very efficient and cost-effective.
+        - Pay-per-use: You only pay for the resources that your application uses. This can save you a lot of money compared to traditional server-based applications.
+        - Scalable: Serverless applications can automatically scale up and down to meet demand. This means that you don't have to worry about your application crashing during peak traffic times.
+        - Faster development: Serverless can help you develop and deploy applications more quickly and easily.
+
+services
+    - EC2
+        - EC2 is like renting virtual computers from Amazon instead of buying your own. You can get as many or as few as you need, and only pay for what you use. It's perfect for things like web apps, processing data, or running big tasks without taking care of all the hardware stuff yourself. Think of it as "plug and play" computers in the cloud!
+        - EKS/Docker
+        - EKS stands for Elastic Kubernetes Service and it's basically like a handy assistant for managing containers in the cloud. Imagine you have tons of tiny boxes (containers) holding important stuff (applications), and EKS helps you arrange, organize, and keep them running smoothly.
+
+          Here's the easy breakdown:
+
+          Containers: Think of them as tiny, self-contained boxes for your applications. Each container holds everything needed (code, libraries, etc.) to run independently.
+          Kubernetes: It's the manager, telling those containers where to go, how much space they need, and when to work together.
+          Amazon EKS: It's the cloud offering from Amazon that makes using Kubernetes easier. EKS takes care of the tricky setup and maintenance of Kubernetes, so you can focus on building and running your awesome containerized applications.
+          So, instead of wrestling with Kubernetes yourself, EKS takes the reins and lets you manage those container boxes without getting bogged down in the technical details.
+
+          Does that make things a bit clearer? Feel free to ask if you have any more questions about containers, Kubernetes, or EKS! I'm happy to explain further
+    - Elastic Beanstolk
+        - Imagine having a team of helpers who take care of setting up, managing, and growing your "web garden" without you touching the dirt. That's Elastic Beanstalk in a nutshell! ☀️
+
+        - You plant the seeds (code): Upload your website or app code.
+        - Helpers build the garden (infrastructure): They automatically set up servers, load balancers, and other needed tools.
+        - Helpers tend the garden (management): They handle scaling, updates, and even watering (keeping it alive).
+          Basically, Elastic Beanstalk lets you focus on writing code and building your "web plants" while it takes care of the messy backend stuff. You just tell it what you want, and it makes it happen, like magic!
+    - lightsail
+        - Imagine having a small, secure box with a computer inside, connected to the internet and ready for your projects. That's Lightsail! It's a simple way to get started with Amazon's cloud, like a "starter kit" for running websites, apps, or experiments.
+
+          Here's what makes Lightsail special:
+
+          * **Easy to use:** No complicated server stuff, just pick a plan and launch your box in minutes.
+          * **Affordable:** Pay a predictable monthly fee, like renting a small apartment for your code.
+          * **Flexible:** Choose the size and power of your box, and even add extras like databases or backups.
+          * **Great for beginners:** If you're new to cloud computing, Lightsail is a gentle way to dip your toes in.
+
+          Think of EC2 as a whole building full of computers, while Lightsail is your own cozy studio apartment. If you're not sure what you need yet, start with Lightsail and upgrade to EC2 if your project grows bigger!
+
+          Hope this makes it clear! Let me know if you have any other questions about Lightsail or cloud computing in general.
+
+    - amplify
+        - Amplify is like a **shortcut kit** for building web and mobile apps on AWS. It has pre-built tools and features that help you skip all the complex stuff, like setting up servers and databases.
+
+          Here's how it works:
+
+          * **Think of it like a Lego set for programmers.** You snap together different pieces, like user logins, data storage, and notifications, to build your app quickly and easily.
+          * **No server headaches:** Amplify takes care of all the behind-the-scenes stuff, so you can focus on the fun part - coding your app's features.
+          * **Fast and flexible:** Amplify lets you build apps for multiple platforms (web, mobile, etc.) and easily scale them up or down as needed.
+
+          **All in all, Amplify makes building apps on AWS much easier and faster.** It's perfect for developers who want to save time and focus on creating awesome apps.
+
+          Hopefully, that simplified explanation helps! Let me know if you have any other questions about Amplify.
+
+    - lambda
+        -  **Here's a simple way to think about AWS Lambda:**
+
+          **Imagine you have a tiny helper living in the cloud.** You can give this helper small tasks to do, and they'll start working on them instantly, without you having to set up a whole computer for them. Once the task is done, they go back to sleep until you need them again. This helper is AWS Lambda.
+
+          **Here are the key points about Lambda:**
+
+          - **No servers to manage:** You don't need to worry about setting up or maintaining servers—Lambda does it all for you.
+          - **Pay for what you use:** You only pay for the time your code actually runs, so it's super cost-effective for small tasks.
+          - **Event-driven:** You can trigger Lambda functions to run based on events, like someone uploading a file or clicking a button.
+          - **Scalable:** Lambda can handle a lot of tasks at once and automatically scales up or down to meet demand.
+          - **Flexible:** You can write Lambda functions in a bunch of different programming languages.
+
+          **Here are some examples of what you can use Lambda for:**
+
+          - **Processing images:** Resize or crop images when they're uploaded to a website.
+          - **Sending emails:** Send out confirmation emails when someone makes a purchase.
+          - **Generating reports:** Create weekly sales reports and send them to your team.
+          - **Building chatbots:** Create interactive chatbots to answer customer questions.
+          - **Triggering other AWS services:** Use Lambda to start other AWS services, like sending a notification when a new file is uploaded.
+
+          **Basically, Lambda is like having a bunch of tiny helpers ready to do tasks for you in the cloud! It's a great way to build apps without having to worry about servers.** ⚡️☁️
+
+    - S3
+        - Imagine S3 as a giant, secure storage locker in the sky, owned by Amazon (AWS). You can throw anything in there, big or small, from photos and videos to entire websites and databases. You can access it anytime, anywhere, just like with a regular locker, but without needing a key or worrying about losing it. Plus, it's super safe and protected, like Fort Knox in the clouds!
+
+          Here's the main thing about S3:
+
+          * **Storage for ANYTHING:** Files, databases, backups, you name it!
+          * **Massive and Scalable:** Store as much as you need, it can grow with you.
+          * **Always Accessible:** Get your stuff anytime, from anywhere in the world.
+          * **Super Secure:** Amazon guards your stuff like crazy, keeping it safe and sound.
+          * **Pay-as-you-go:** Only pay for the space you actually use, no waste!
+
+          So, S3 is basically your personal (or business) storage space in the cloud, super convenient and always available. Think of it as an upgraded, cloud-powered version of your hard drive with superpowers!
+
+    - DynamoDB
+        - Imagine **DynamoDB** as a super fast, flexible filing cabinet in the cloud, managed by Amazon (AWS). Instead of folders and papers, it stores your app's data like user profiles, shopping cart items, or game scores. Here's the cool part:
+
+          * **Super fast:** It finds your data in milliseconds, even with millions of items!
+          * **Flexible:** No rigid folders, just unique keys to access any data instantly.
+          * **Scales automatically:** No need to worry about running out of space, it grows as your data does. ♾️
+          * **Pay-per-use:** You only pay for the data you actually store and the speed you use.
+
+          **Think of it like this:**
+
+          * Your app asks for a user's profile: DynamoDB instantly gives it. ⚡
+          * You add a new item to your shopping cart: DynamoDB stores it securely.
+          * Your game levels up: DynamoDB saves your progress seamlessly.
+
+          So, **DynamoDB is basically a fast, flexible, and cost-effective way to store your app's data in the cloud, managed by Amazon.** If you need a place for your app's information to live and be easily accessed, this is your friendly neighborhood filing cabinet in the sky! ☁️
+
+          Hope that makes it clear! Let me know if you have any other questions.
