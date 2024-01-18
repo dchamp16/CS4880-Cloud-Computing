@@ -1,0 +1,91 @@
+AWS region is a geographical area
+
+region has multilpe availability zone
+
+each availability zone is a fully isolated partition of the aws infrastrcuture
+
+data center
+- aws data center are designed for security
+- data center are where the data resides and data processing occurs
+
+
+points of presence
+- aws rovides a global netwrok of 187 points of presence location
+- consist of 176 edge locations and 11 regional edge caches
+- used with amazon cloudfront
+    - a global content delivery network that delivers contetn to end users with reduce latency
+- regional edge caches used for content with infrequent access
+
+AWS infrastructure features
+
+elasticity and scalability:
+
+Imagine a magic potion that lets your infrastructure grow and shrink instantly, adapting to your needs. That's elasticity and scalability in a nutshell. With AWS, you can:
+
+- Scale up resources like compute power, storage, and network bandwidth on-demand to handle traffic spikes or new workloads. Think of it like adding more checkout lanes in a busy supermarket.
+- Scale down resources when demand drops, avoiding wasted spending and optimizing costs. It's like closing checkout lanes during slower hours.
+
+
+fault-tolerance:
+
+Picture a tightrope walker with a safety net. That's fault tolerance in AWS. It ensures your applications and data remain available even if there are hardware or software failures. Here's how it works:
+
+- Redundancy: Key components like storage and networking are replicated across multiple Availability Zones (AZs) within a Region. If one AZ experiences an outage, the others take over seamlessly.
+- Automatic failover: In case of an issue, AWS automatically redirects traffic to healthy resources, minimizing downtime and data loss.
+- Self-healing mechanisms: Services like Amazon EC2 can automatically replace unhealthy instances with new ones, keeping your applications running smoothly.
+
+
+high availability:
+
+Think of high availability as a team of backup chefs ready to jump in if the main chef gets sick. It ensures continuous uptime for your critical applications and services. AWS achieves this through:
+
+- Redundancy across Regions: You can configure your applications to run in multiple Regions simultaneously. If one Region goes down, the others keep your applications up and running for your users.
+- Load balancing: Distribute traffic across multiple healthy instances to prevent overloading and ensure smooth performance. Imagine splitting the crowd among multiple checkout lanes to avoid long queues.
+- Disaster recovery: Design your infrastructure with disaster recovery in mind to quickly restore operations after a major outage or natural disaster.
+
+
+storage service category
+
+aws storage services:
+
+**Amazon Simple Storage Service (Amazon S3):**
+
+* **Object storage:** Stores data as objects, each with a unique identifier and metadata.
+* **Highly scalable and durable:** Designed for 99.999999999% durability, meaning data is incredibly safe.
+* **Cost-effective:** Offers various storage classes for different access patterns, optimizing costs for frequently accessed, infrequently accessed, and archived data.
+* **Versatile:** Used for websites, static content, data lakes, backups, archives, and more.
+
+**Amazon Elastic Block Store (Amazon EBS):**
+
+* **Block storage:** Provides persistent block-level storage volumes for use with Amazon EC2 instances.
+* **High-performance:** Ideal for workloads requiring high throughput and low latency, such as databases and enterprise applications.
+* **Durable:** Offers options for replication within a Region for data protection.
+* **Managed service:** AWS handles provisioning, setup, and maintenance.
+
+**Amazon Elastic File System (Amazon EFS):**
+
+* **Managed file system:** Provides a scalable, elastic file system for Linux-based workloads.
+* **Shared access:** Multiple EC2 instances can access the same file system simultaneously for easy collaboration and data sharing.
+* **Highly scalable:** Grows and shrinks automatically as you add or remove files.
+* **Ideal for:** Content management, web serving, application development, and big data analytics.
+
+**Amazon S3 Glacier:**
+
+* **Secure, durable, and low-cost archive storage:** Designed for long-term data preservation and archival.
+* **Cost-effective:** Significantly cheaper than S3 for long-term storage.
+* **Retrieval time:** Data retrieval can take several hours, making it suitable for infrequently accessed data.
+* **Ideal for:** Compliance archives, backups, and long-term data retention.
+
+**Key differences to remember:**
+
+* **S3:** Versatile object storage for various use cases, prioritizing scalability and cost-effectiveness.
+* **EBS:** High-performance block storage for EC2 instances, ideal for databases and applications requiring low latency and high throughput.
+* **EFS:** Managed file system for shared access and high scalability, suitable for content management, web serving, and big data analytics.
+* **S3 Glacier:** Secure, durable, and low-cost archive storage for infrequent access and long-term data preservation.
+
+**Choosing the right storage service depends on your specific needs:**
+
+* **Data access patterns:** How often do you need to access the data?
+* **Performance requirements:** How fast does the data need to be accessed?
+* **Durability needs:** How critical is data protection and long-term preservation?
+* **Cost considerations:** How much are you willing to pay for storage?

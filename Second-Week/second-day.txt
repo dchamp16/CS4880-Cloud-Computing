@@ -1,0 +1,41 @@
+system defined
+- information that amazon s3 controls
+object creation date
+object size
+object version
+
+- information that you can modify
+storage class configuration
+server side encryption
+
+- user defined
+information that you assigned of the bucket
+
+- put object
+use the put object to upload entire object to a bucket
+
+should use single upload for object up to 5gb in a single put operation
+should use muti part upload 5gb 5tb
+
+- versioning
+
+it is a way to keep multiple variant of object in the same bucket
+it is a way to recover from unintended user action and application failure
+in versioning enabled s3 bucket each object has a version ID
+after versioning enable it can only suspended
+versioned bucket support object locking
+
+
+- secuing data in transit
+SSL/TLS encrypted endpoint with https
+client side encryption of data before transmission
+
+- securing data at rest
+client side encryption
+server side encryption
+amazon s3 managed key
+aws kms managed keys
+customer provided key
+
+
+
