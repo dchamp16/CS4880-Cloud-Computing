@@ -1,0 +1,65 @@
+Security and compliance - shared responsibility between aws and the customer
+
+
+shared responsibility with AWS and customer:
+
+AWS
+    - security of the cloud
+    - regions
+    - storage
+    - hardware and aws global infrastructure
+    - server side encryption ()file system and data
+
+Customer
+    - security in the cloud the data
+    - data
+    - operating system, network, and firewall configuration
+    - client side data encryption and data integrity and authentication
+    - networking traffic protection ()encryption, integrity and identify
+    - availability zones
+    - networking
+    - software
+    - edge location
+    - compute
+    - platform, application , identity and access management
+    - database
+
+
+hypervisor - is the host os that runs the EC2 of databases
+
+IAM(AWS SERVICE):
+    - securely control individual and group access to your AWS resources
+    - Integrated with other aws services
+    - supports federated identity management
+    - supports granular permissions
+    - supports multi-factor authentication(MFA)
+
+ Authentication
+    - who is requesting access to aws account and the resources in it
+    - it important establish the identity of the requester through credentials
+    - the requester could be a person or an application IAM calls them pricipals
+
+ Authorization
+    - assuming that the requesters been authenticated what should they be allowed to do
+    - IAM check for policies that are relevant to the request to determine whether to allow or deny the request
+
+ Authenticate in IAM:
+
+ Multi-factor authentication
+ Adds an extra layer of protection on top your user name and password
+    - user are promoted for an authentication code
+    - it can be hardware-based or a virtual devices
+ Enable MFA for
+    - AWS management console user
+    - AWS API users(requires temporary security credentials)
+
+IAM role characteristics
+    - provides temporary security credentials
+    - is not unique associate with one person
+    - assumable by a person, application
+    - often used to delegate access
+
+common use cases
+    - application that run on amazon elastic compute cloud
+    - cross account access for an IAM use
+    - mobile application
