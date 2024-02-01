@@ -1,0 +1,8 @@
+two types of trdful API in API gateway
+    - Rest API
+    - Gives the developer full controll over API request and responses
+    - supports features that are not yet available HTTPS API
+
+    - HTTP API
+    - simplifies the development of API that require only API proxy functionlity
+    - designed fot the lowest cost and lowest latency

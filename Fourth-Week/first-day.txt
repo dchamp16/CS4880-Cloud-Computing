@@ -1,0 +1,62 @@
+    when to choose relational database
+- you must use strict schema rules and must enforce
+- your database doesn't need extreme read and write
+
+    when to choose non-relational database
+- you need your database to scale horizontally
+- your data first lend itself well to traditional schema
+
+    relational database services
+- amazon relation database service (amazon RDS)
+- amazon aurora
+
+    non relational database service
+- amazon dynamoDB
+- amazon elasticache
+- amazon neptune
+
+    Concept of dynamoDB
+- stores data in partition based on the partition key
+- simple primary key the key determines which partitions are selected
+- composite primary key the key still determines which partitions are selected on the key but the order is based on the sort key
+- use to query data based on non-primary-key attributes
+    - secondary index defines an alternate key
+- contain
+    - alternate key
+    - primary key
+    - optional subset of other attributes from the base table
+- can be one of two type
+    - global secondary index
+    - local secondary index
+
+    read write
+- dynamoDB maintain multiple copies of data for durability
+    - all copies of your data are usually consistent within a second after a write operation
+- eventually consisted read might return slight stale data if a read operation is performed immediately after a write operation
+- simplify the developer experience of making coordinated all or nothing changes to multiple items both across the platform
+
+    read capacity unit(RCU)
+- number of strong consistent reads per second of items that are up to 4kb in size
+- eventually consistent read are use half of the provisioned read capacity
+    write capacity unit(WCU)
+- number of 1kb per second
+
+- pay per request pricing for rea and write request
+- dynamodb adapt rapidly to accommodate the workload
+- request rate is limited by throughout default table limit
+- create or update a table to use on demand mode
+- streams are observed changes in data
+- streams are composed of shards of data
+- streams can be consumed by other aws services like aws lambda
+- global tables replicate dynamodb tables across aws regions
+
+    DynamoDB api operations
+- control operation
+    - Create and manage dynamoDB tables
+- data operation
+    - create read update and delete actions on data in a table
+- batch operation
+    - ge and write batches of item in table
+- transaction
+    - make coordinated all or nothing change to multiple table
+
