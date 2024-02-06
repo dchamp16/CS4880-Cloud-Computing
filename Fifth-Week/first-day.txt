@@ -1,0 +1,10 @@
+why cloudy
+    - pay for what you use
+    - resiliency
+        - VPC/AZ/Regions
+    - Scale
+
+Benefits of cloud over on premises
+    - low capital outlay
+    - faster time to market
+    - agility
