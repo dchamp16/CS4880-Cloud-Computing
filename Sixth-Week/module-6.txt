@@ -63,3 +63,121 @@ lambda feature
 
 concurrency - the number of function invocations that are running at one time
 
+Invoking Lambda
+
+To invoke a Lambda function in AWS, you can use various methods depending on your use case. Here are the primary ways to invoke a Lambda function:
+
+Synchronous Invocation:  For synchronous invocation, you call the Lambda function directly (using the AWS SDK, API Gateway, or other compatible methods) and wait for the function to execute and return a response. This is ideal for use cases where you need the  result of the function's execution immediately.
+
+Common Use Cases: Web request handling, real-time data processing where low latency is essential.
+Asynchronous Invocation: You can invoke a Lambda function asynchronously using the AWS SDK or by integrating with services like Amazon SNS, SQS, or Amazon EventBridge. With asynchronous invocation, you trigger the function but don't wait for it to complete. The response isn't immediately available, but Lambda handles automatic retries and potential failure scenarios.
+
+Common Use Cases: Image/video processing, batch data analysis, tasks that benefit from "fire and forget" execution patterns.
+
+Setting permission for lambda
+
+Fundamentals
+
+Permissions in Lambda function around two areas:
+
+What your Lambda function can do: This encompasses the actions your function is allowed to take on other AWS services. This is controlled primarily by its execution role.
+
+What can invoke your Lambda function: This controls the other AWS services and accounts that are allowed to trigger your function's execution. Resource-based policies often control this.
+
+Key Components
+
+Execution Role (IAM Role): This is the fundamental way to grant  permissions to your Lambda function. An IAM role has policies attached to it.  You can either:
+
+Use an existing role: Select one previously created.
+Create a new role: Specify permissions directly at function creation. It's generally best to start with the 'AWSLambdaBasicExecutionRole' managed policy and add more tailored permissions.
+IAM Policies: The core building blocks for permissions. An IAM policy is a JSON document that defines:
+
+Effect: "Allow" or "Deny".
+Action: Operations permitted on AWS services (e.g., "s3:GetObject", "dynamodb:PutItem")
+Resources: The specific AWS resource(s) to which the actions apply (e.g., an S3 bucket ARN).
+Resource-Based Policies: For some AWS services, you can apply this directly to the resource (e.g., to an S3 bucket or an SNS topic).  Resource-based policies control who or what can invoke your function from outside services.
+
+How to Set Permissions
+
+During Function Creation: When creating your function in the console, you can select an existing role or opt to have AWS create a basic role for you.
+
+Post-Creation in the Console:
+
+Go to the Lambda console, select your function.
+Under "Configuration" -> "Permissions".
+Modify the attached role and IAM policies to adjust permissions.
+AWS CLI or SDK:
+
+Use commands like aws lambda add-permission (for function invocation permissions) or aws iam attach-role-policy
+
+lambda function handler
+        - What is a Lambda Function Handler?
+
+The Entry Point: The handler is the function within your Lambda function's code that AWS initially executes when the function is invoked. It acts as the starting point for processing the incoming event.
+Receives Event and Context: The handler function receives two primary arguments:
+event: A JSON-like object containing data about the trigger that invoked the function. The structure of the 'event' object varies depending on the trigger source (e.g., API Gateway, S3, etc.).
+context: An object providing information about the function's runtime environment, like remaining execution time, function name, AWS request ID, and access to logging methods.
+Language-Specific Examples
+
+Here's how a  basic Lambda function handler looks in different supported languages:
+
+Python
+
+Python
+def lambda_handler(event, context):
+    # Your code to process the event
+    return { 
+        'statusCode': 200,
+        'body': 'Hello from Lambda!'
+    }
+Use code with caution.
+
+Node.js
+
+JavaScript
+exports.handler = async (event, context) => {
+    // Your code to process the event
+    return { 
+        statusCode: 200,
+        body: 'Hello from Lambda!'
+    };
+};
+Use code with caution.
+
+AWS Console: When creating or editing your Lambda function, there's a "Runtime settings" section where you specify the handler. The format is usually filename.function_name (e.g., index.handler for Node.js).
+AWS CLI/SDK: During function creation/update, you provide the handler information.
+
+deploying lambda function
+        - AWS Console
+
+Simplest for Beginners: Great if you're new to Lambda. Navigate to the AWS Lambda console, create or open an existing function.
+Inline Editing: Write code directly using the console's code editor. Good for smaller functions.
+ZIP File Upload: Package your code and dependencies into a ZIP archive and upload it. Convenient for code on your local machine.
+AWS Serverless Application Model (SAM)
+
+Infrastructure as Code (IaC): Utilize a template format (YAML or JSON) to define your Lambda functions, their event triggers, and associated AWS resources.
+Best Practices and Automation: Excellent for deploying multiple Lambda functions and complex, interdependent serverless applications. SAM lets you test locally and provides streamlined workflows.
+AWS Command Line Interface (AWS CLI)
+
+Scripting and Integration: Automate deployments using CLI commands from a terminal.
+Ideal for Existing Toolchains: Include deployments as part of CI/CD pipelines or custom build scripts.
+AWS SDKs
+
+Programmatic Control: Integrate deployment directly into code using AWS SDKs (e.g., Python's Boto3, JavaScript, Java).
+Dynamic Deployment: Enables deployment as part of custom applications or when function requirements are determined within your code at runtime.
+Container Image
+Packaging Flexibility: Containerize your function and its dependencies (great for complex scenarios, less common than ZIP).
+Steps:
+Create a Docker image for your function
+Push the image to a repository like Amazon Elastic Container Registry (ECR)
+Deploy your Lambda function from the container image on ECR
+Choosing the Right Method
+
+Function Complexity:
+Single, simple function? Console or CLI might be adequate.
+Multiple functions, complex architecture? Consider SAM or SDKs.
+Deployment Automation:
+Integrate into pipelines? Favor SAM, CLI, or SDKs.
+Comfort Level:
+New to AWS? Start with the console.
+Comfortable with automation or IaC? Choose SAM and/or CLI.
