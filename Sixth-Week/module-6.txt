@@ -1,0 +1,65 @@
+Servelss computing level of abstraction
+
+ - On-Premises:  The most hands-on level. You manage everything—hardware, operating systems, networking, virtualization (if any), middleware, runtime environments, and your application code.
+
+- Virtual Servers in the Cloud (IaaS):  The cloud provider handles the physical hardware, and you take care of everything else – operating systems, networking, middleware, runtime environments, and application code.
+
+        - AWS Example: Amazon EC2 (Elastic Compute Cloud)
+
+- Containers (CaaS):  A higher level of abstraction. You bundle your application with its dependencies (like libraries and code) into a portable container. Container orchestration services manage the execution, scaling, and networking of these containers.
+
+        - AWS Examples: Amazon ECS (Elastic Container Service), Amazon EKS (Elastic Kubernetes Service)
+
+- Serverless (FaaS):  The highest level of abstraction. You focus purely on writing code as functions. The cloud provider completely manages the execution environment, scaling, and even billing based on precise resource consumption.
+
+        - AWS Example: AWS Lambda
+
+moving away from a monolithic application
+
+Monolith
+
+- Characteristics: A traditional approach where all the components of your application (frontend, backend, database, business logic) are tightly coupled into a single codebase and deployed as a unit.
+- Advantages:
+Simpler to develop and deploy initially.
+Can be efficient for smaller applications.
+- Disadvantages:
+Scalability Issues: Scaling specific parts of the application is difficult; you often need to scale the entire monolith.
+Tight Coupling: Changes in one area can ripple throughout the entire codebase, making maintenance and new features challenging to implement.
+Technology Lock-in: Harder to adopt new technologies or languages into different components since they must all co-exist in the monolith.
+
+Microservices
+
+- Characteristics: A modern approach where your application is broken into smaller, independent services communicating via APIs. Each service owns its data, manages its business logic, and can be deployed/scaled autonomously.
+- Advantages:
+Scalability: Services can be scaled independently based on demand.
+Agility: Smaller codebases enable faster deployments and updates.
+Resilience: Failures in one service don't necessarily take down the entire system.
+Technology Freedom: Each service can utilize different languages or frameworks best suited for its specific tasks.
+
+- Disadvantages:
+Complexity: Designing, building, and managing a distributed system is more complex than a monolith.
+Communication Overhead: Inter-service communication needs careful consideration (latency, fault tolerance).
+Why the Shift from Monolithic to Microservices?
+
+The main advantages of migrating to microservices stem from addressing the disadvantages of a monolith:
+
+Scalability: When an application sees massive growth, microservices allow targeting scaling efforts only to the parts facing the increased demand.
+Agility and Maintainability: Smaller, decoupled codebases lead to faster updates, less risk of breaking unrelated features, and easier bug fixes.
+Technological Flexibility: You can gradually move away from legacy components within the monolith using newer technologies better suited to specific needs of individual microservices.
+
+- lambda is serveless compute service that you can use to code without provision or managing servers
+
+    - upload your code to lambda or write code in the lambda editor
+    - set up your code to run when events occurin other aws service http endpoint or as part  of in app avtivity
+    - lambda run your code only when it is activated by an event and uses only the compute in use
+
+lambda feature
+    - offer the ability bring your own code
+    - integrates with and extend other aws services
+    - offer flexible resources and concurrency models
+    - flexible permission model
+    - provide built-in availabilty and fault tolerance
+    - reduce the need to pay in idle resource
+
+concurrency - the number of function invocations that are running at one time
+

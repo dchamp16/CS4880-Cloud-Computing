@@ -1,0 +1,33 @@
+what is API
+    - API stands for Application Programming Interface. It's essentially a set of rules and specifications that software programs use to communicate with each other.
+
+      How APIs Work
+
+      - Think of an API like a restaurant menu:
+
+      - The Menu: The API lists the available "dishes" (data or functionality) that an application offers.
+      - The Customer: You are the developer who wants to use the data or functionality from another application.
+      - The Waiter: The API acts as the middleman, taking your order (request) to the kitchen.
+      - The Kitchen: The other application's system, which processes the request and prepares the "dish."
+      - The Response: The API delivers the result you requested (e.g., data, completed action) back to you.
+      - Connectivity: APIs let different applications interact, even if written in different programming languages or built on different platforms.
+      - Efficiency: You don't need to build features from scratch; APIs let you utilize services already created by others.
+      - Data Control: Companies can make their data or services available to developers in a managed and secure way.
+
+status
+    - 200 and up: its good
+    - 400 and up: user need to do something but still error
+    - 500 and up: client is not the problem
+
+What is AWS API Gateway?
+
+    - Fully Managed Service: AWS API Gateway lets you create, deploy, secure, maintain, and monitor APIs at virtually any scale. It's a serverless offering, so you don't have to worry about managing servers or infrastructure.
+    - The "Front Door" for Applications: API Gateway acts as a central point of entry for your backend services (like AWS Lambda functions, Amazon EC2 instances, or applications outside of AWS). This simplifies management of your APIs and traffic flow.
+
+    - API Types: Supports RESTful APIs (for building applications with the common HTTP methods), WebSocket APIs (for real-time, two-way communication between clients and services), and HTTP APIs (optimized for building low-latency, cost-effective APIs ).
+    - Traffic Management: Handles load balancing, throttling requests to protect your backend services, and distributing API calls across different versions of your APIs.
+    - Authentication and Authorization: Lets you control access to your APIs using mechanisms like API keys, IAM roles, and Amazon Cognito for robust security.
+    - Monitoring: Provides metrics and logging so you track API usage, identify errors, and track performance.
+    - Developer Friendly: Integrates with tools like the AWS Management Console, AWS SDKs, and the AWS CLI, offering a familiar environment for working with AWS services.
+
+    
