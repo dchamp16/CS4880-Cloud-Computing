@@ -1,0 +1,48 @@
+## Understanding Serverless Computing
+
+* **Levels of Abstraction**
+   * **On-Premises:** You manage everything: hardware, operating systems, networking, middleware, and your code.
+   * **Virtual Servers in the Cloud (IaaS):** The cloud provider handles hardware; you manage operating systems, networking, middleware, and code. (Example: Amazon EC2)
+   * **Containers (CaaS):** Package your code and dependencies into portable containers. Services manage container execution and scaling. (Examples: Amazon ECS, Amazon EKS)
+   * **Serverless (FaaS):** You focus purely on code (functions). The cloud provider handles the execution environment, scaling, and even precise billing. (Example: AWS Lambda)
+
+## From Monoliths to Microservices
+
+* **Monolithic Applications:**
+    * All components (frontend, backend, database) are tightly coupled in a single codebase.
+    * Pros: Simpler initial development, good for small applications.
+    * Cons: Hard to scale specific parts, changes become risky, tied to older technologies.
+
+* **Microservices:**
+    * Application broken down into small, independent services that communicate via APIs.
+    * Pros: Scalable, faster updates, failure resilience, freedom to use different technologies for each service.
+    * Cons: Increased complexity in design and communication.
+
+* **Why the Shift?** Microservices address limitations of monoliths, enabling greater scalability, agility, and flexibility.
+
+## AWS Lambda: Serverless in Action
+
+* **What is Lambda?** AWS's serverless compute service. You write code as functions; Lambda handles the rest.
+* **Features:** 
+    * Bring your own code (various languages supported).
+    * Easy integration with other AWS services.
+    * Flexible resources and pay-per-use billing.
+    * Built-in security and fault tolerance.
+
+* **Invoking Lambda:**
+    * **Synchronous:** Call the function and wait for the response (e.g., for web requests)
+    * **Asynchronous:** Trigger the function, let Lambda handle completion (e.g., for image processing) 
+
+* **Permissions:**
+    * **Execution Role:** What your function can do (actions on other AWS services).
+    * **Resource-Based Policies:** Who/what can trigger your function.
+
+* **Function Handler:** The entry point of your Lambda code. Receives an event (trigger data) and context (runtime info).
+
+* **Deployment Methods**
+    * **AWS Console:** Good for simple functions and beginners.
+    * **AWS SAM:** Define infrastructure as code; ideal for complex serverless applications.
+    * **AWS CLI:** For scripting and automation.
+    * **AWS SDKs:** For deployments integrated into your custom applications.
+
+**Let me know if you want more details on any of these concepts!** 
