@@ -1,0 +1,33 @@
+Introducing container
+
+Amazon Web Services (AWS) offers several services for running, orchestrating, and managing containers. Containers provide a standard way to package your application's code, configurations, and dependencies into a single object. Here are some of the key AWS services related to containers:
+
+Amazon Elastic Container Service (ECS): A highly scalable, high-performance container orchestration service that supports Docker containers and allows you to easily run and scale containerized applications on AWS.
+
+Amazon Elastic Kubernetes Service (EKS): A managed service that makes it easy for you to run Kubernetes on AWS without needing to install, operate, and maintain your own Kubernetes control plane or nodes.
+
+AWS Fargate: A serverless compute engine for containers that works with both Amazon ECS and EKS. Fargate removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation.
+
+Amazon Elastic Container Registry (ECR): A fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+
+AWS App Runner: A service that makes it easy for developers to build, deploy, and run containerized applications in AWS. App Runner is great for developers who want to focus on writing code, not managing infrastructure.
+
+AWS Copilot: A command line interface (CLI) that makes it easy to build, release, and operate production ready containerized applications on Amazon ECS and AWS Fargate.
+
+
+
+The evolution of deployment models has been significant over the years, especially with the advent of virtualization and cloud computing. Here's a brief overview of the evolution, including Virtual Machine Systems (VMS):
+
+Physical Servers: In the early days of computing, applications were deployed directly on physical servers. This meant that each application would have its own dedicated server. This model was simple but inefficient, as a lot of computing resources were underutilized.
+
+Virtual Machines (VMs): With the advent of virtualization, it became possible to run multiple virtual machines on a single physical server. Each VM acts like a separate computer with its own operating system and applications. This model increased the utilization of physical resources and allowed for better isolation between applications.
+
+Containers: Containers are a lighter-weight alternative to VMs. While VMs virtualize the entire operating system, containers only virtualize the application and its dependencies. This makes containers more portable and efficient than VMs. Docker and Kubernetes are popular technologies in this space.
+
+Serverless: In the serverless model, developers focus only on writing the application code. The cloud provider takes care of all the infrastructure management tasks. AWS Lambda is a popular serverless computing service.
+
+Microservices: This is more of an architectural style than a deployment model. In the microservices model, applications are broken down into smaller, independent services that communicate with each other. This model is often used in conjunction with containers and serverless computing.
+
+Edge Computing: In this model, computations are performed closer to the source of the data, rather than in a centralized data center or cloud. This can reduce latency and bandwidth usage.
+
+
