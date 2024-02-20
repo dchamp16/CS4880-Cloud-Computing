@@ -31,3 +31,27 @@ Microservices: This is more of an architectural style than a deployment model. I
 Edge Computing: In this model, computations are performed closer to the source of the data, rather than in a centralized data center or cloud. This can reduce latency and bandwidth usage.
 
 
+Microservices Explained
+
+Microservices: An architectural style where applications are built as small, independent services, focusing on specific business capabilities.
+Benefits: Improved scalability, reliability, development speed, and the ability to use diverse technologies.
+Key AWS Services for Microservices
+
+Compute:
+
+EC2: Provides virtual servers for flexible microservice hosting.
+Lambda: Ideal for small, event-driven tasks within microservices.
+ECS: Orchestrates containerized microservices on EC2.
+Fargate: Simplifies container deployment by removing server management.
+API Management:
+
+API Gateway: Centralized solution for creating and managing RESTful APIs used by microservices to communicate.
+Messaging:
+
+SQS: Enables reliable queuing for communication between services.
+SNS: Facilitates decoupled communication with its publish/subscribe messaging pattern.
+Storage:
+
+S3: Secure, scalable object storage for microservice-related data.
+DynamoDB: A fast, flexible NoSQL database well-suited for microservice applications.
+
