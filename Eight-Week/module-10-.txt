@@ -1,0 +1,48 @@
+Amazon Simple Queue Service (SQS) and Simple Notification Service (SNS) are both messaging services provided by Amazon Web Services (AWS), but they serve different purposes.
+
+Amazon SQS is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. SQS eliminates the complexity and overhead associated with managing and operating message oriented middleware, and empowers developers to focus on differentiating work.
+
+Amazon SNS is a fully managed messaging service for both application-to-application (A2A) and application-to-person (A2P) communication. The A2A pub/sub functionality provides topics for high-throughput, push-based, many-to-many messaging between distributed systems, microservices, and event-driven serverless applications.
+
+
+The receiveMessage operation in Amazon SQS retrieves one or more messages (up to 10), from the specified queue. For each message returned, the response includes the following:
+
+Message body
+MD5 digest of the message body
+Message ID you received when you sent the message to the queue
+Receipt handle
+The receipt handle is the identifier you must provide when deleting the message.
+
+
+Here are the steps to confisgure Amazon SQS:
+
+Sign in to the AWS Management Console and open the Amazon SQS console at https://console.aws.amazon.com/sqs/.
+
+Create a new SQS queue:
+
+Click on "Create New Queue".
+In the "Create New Queue" dialog box, type your Queue Name.
+Select the Queue Type. You can choose between Standard (default) and FIFO queue.
+Click on "Quick-Create Queue" to create with default settings, or "Configure Queue" to specify additional settings like Delivery Delay, Message Retention Period, Maximum Message Size, etc.
+Send a message to your SQS queue:
+
+Select the queue you just created.
+Click on the "Send and receive messages" button.
+In the "Send a Message" dialog box, type your message in the "Message Body" field.
+Click on "Send Message".
+Receive a message from your SQS queue:
+
+In the "Receive Messages" section, click on "Poll for messages". If there are any messages in the queue, one will appear in the "Messages" section.
+You can then process the message and delete it from the queue to prevent it from being received again.
+Delete a message from your SQS queue:
+
+After processing the message, select it in the "Messages" section.
+Click on "Delete Messages".
+Confirm the deletion in the dialog box that appears.
+Delete the SQS queue:
+
+Once you're done with the queue, you can delete it to prevent any additional charges.
+Select the queue in the "Queues" section.
+Click on "Delete Queue".
+Confirm the deletion in the dialog box that appears.
+Remember to replace 'SQS_QUEUE_URL' with your actual SQS queue URL.
