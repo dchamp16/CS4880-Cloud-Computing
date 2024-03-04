@@ -1,0 +1,48 @@
+Coordinating tasks in distributed application
+
+**Core AWS Services for Task Coordination**
+
+* **AWS Step Functions:** This is the star for workflow orchestration and task coordination on AWS.  Step Functions lets you:
+    * **Graphically Build Workflows:** Create visual state machines, defining the order in which tasks execute, incorporating branching logic, error handling, and retries.
+    * **Integrate with AWS Services:** Effortlessly connect with services like AWS Lambda, AWS Batch, Amazon SQS, and Amazon SNS within your workflows.
+* **Amazon Simple Queue Service (SQS):** SQS acts as a reliable message broker.
+    * **Decoupled Communication:** Components of your distributed application can send messages to the queue, and other components can independently process them when they're ready.
+    * **Asynchronous Processing:** This allows for load balancing and handling bursts of activity without overwhelming downstream components.
+* **Amazon Simple Notification Service (SNS):** SNS provides pub/sub messaging.
+    * **Fan-out:** Send a single message and have it delivered to many subscribers for parallel processing.
+    * **Event-Driven Coordination:** SNS messages can trigger AWS Lambda functions  or other components, enabling a reactive architecture.
+
+**Design Patterns**
+
+1. **Orchestration with AWS Step Functions:**
+   * Build a state machine representing the precise workflow you need.
+   * Each step in your state machine might trigger an AWS Lambda function (for short-running tasks), invoke AWS Batch (for longer compute tasks), or interact with SQS or SNS to distribute work.
+   * Step Functions manages execution, failure handling, and provides visual monitoring of your workflow.
+
+2. **Decoupled Communication with Amazon SQS:**
+   * Producers of work send messages to a queue.
+   * Consumers process messages from the queue, performing tasks at their own pace.
+   * This is great for handling fluctuating workloads and ensuring no component is bottlenecked by another.
+
+3. **Event-Driven Coordination with Amazon SNS:**
+   * Publish events to SNS topics
+   * Interested subscribers (Lambda functions, SQS queues, etc.) receive these events and react accordingly.
+   * This encourages a loosely coupled architecture where changes in one part of your application can trigger actions elsewhere.
+
+**Example: Image Processing Pipeline**
+
+1. A user uploads an image to Amazon S3.
+2. The S3 upload event triggers an AWS Lambda function.
+3. The Lambda function sends a message to an Amazon SQS queue indicating the image location.
+4. Another Lambda function (or a fleet of functions) consumes messages from the SQS queue, performing the following:
+    * Thumbnail generation
+    * Image analysis
+    * Metadata extraction
+5. Results are stored back in S3 or a database like Amazon DynamoDB.
+
+**Additional Considerations**
+
+* **Error Handling and Retries:** Implement robust error handling with Step Functions' retry mechanisms and exception paths. Consider SQS dead-letter queues for messages that fail repeatedly.
+* **Monitoring and Observability:** Use Amazon CloudWatch for logging and metrics. AWS X-Ray helps with tracing requests through your distributed system.
+* **Security:** Follow the principle of least privilege with AWS IAM roles for each service.
+* **Cost Optimization:** Understand the pricing models for each service. Factor in potential costs of data transfer if services are in different AWS regions.
